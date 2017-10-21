@@ -7,3 +7,19 @@ B dgraph
 B .
 PKG lablgtk2
 FLG -w +a -w -4 -w -44 -w -48 -w -29
+
+####{BSB GENERATED: NO EDIT
+B lib/bs
+FLG -open Graph
+FLG -ppx /Users/hongbozhang/bucklescript/bin/bsppx.exe
+S /Users/hongbozhang/bucklescript/node_modules/bs-platform/lib/ocaml
+B /Users/hongbozhang/bucklescript/node_modules/bs-platform/lib/ocaml
+FLG -nostdlib -no-alias-deps -color always
+FLG -w -30-40+6+7+27+32..39+44+45
+S tests
+B lib/bs/tests
+S src
+B lib/bs/src
+S libx
+B lib/bs/libx
+####BSB GENERATED: NO EDIT}
