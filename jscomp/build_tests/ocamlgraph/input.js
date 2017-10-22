@@ -5,13 +5,15 @@ var path = require('path')
 var fs = require('fs')
 var assert = require('assert')
 p.execSync(`bsb`,{cwd: __dirname})
-
+var check_file = path.join(__dirname,'tests','check.bs.js')
 var xs = p.spawnSync('node',
-    [path.join(__dirname,'tests','check.bs.js')],
-    { encoding: 'ascii'}
+    [check_file],
+    { encoding: 'utf8'}
 ).output
 
-var ys= fs.readFileSync(path.join(__dirname,'tests','check.ref'),'ascii')
+var ys= fs.readFileSync(path.join(__dirname,'tests','check.ref'),'utf8')
+console.log(fs.readFileSync(check_file,'utf8'))
+console.log(xs)
 assert.equal(xs[1],ys)
 
 
