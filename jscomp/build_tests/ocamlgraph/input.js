@@ -12,7 +12,7 @@ var xs = p.spawnSync('node',
 ).output
 
 var ys= fs.readFileSync(path.join(__dirname,'tests','check.ref'),'ascii')
-assert.ok(xs[1]===ys, 'check passed')
+assert.equal(xs[1],ys)
 
 
 var xs = p.spawnSync('node',
@@ -20,9 +20,8 @@ var xs = p.spawnSync('node',
     { encoding: 'ascii'}
 ).output
 var ys = fs.readFileSync(path.join(__dirname,'tests','test_topsort.ref'),'ascii')
-assert.ok(
-    xs[1] === ys ,
-    'topsort'
+assert.equal(
+    xs[1] , ys
 )
 
 var xs = p.spawnSync('node',
@@ -30,9 +29,8 @@ var xs = p.spawnSync('node',
     { encoding: 'ascii'}
 ).output
 var ys = fs.readFileSync(path.join(__dirname,'tests','test_johnson.ref'),'ascii')
-assert.ok(
-    xs[1] === ys ,
-    'johnson'
+assert.equal(
+    xs[1], ys
 )
 
 
